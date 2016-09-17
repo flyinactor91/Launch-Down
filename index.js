@@ -28,6 +28,12 @@ function getRelativeCoords(event) {
       console.log([bx, by, distance(x,y, bx, by)])
       if(distance(x,y, bx, by) < buttons.height/2){ //height is diameter
         console.log("CLICKED!")
+        switch(i){
+          case 0:
+            var audio = new Audio('art/thunder.mp3')
+            audio.play()
+            break;
+        }
       }
 
     }
