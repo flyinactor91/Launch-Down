@@ -35,3 +35,37 @@ function powerHandler(ptype) {
 }
 
 var tick = setInterval(timeHandler, 1000);
+
+
+// checks player visibility on button click
+
+
+    function changeImage(Vis) {
+        if (Vis <= 5){
+            var State = 0;
+        }
+        else if (Vis < 10)
+            {var State = 1;}
+        else if (Vis => 10)
+            {var State = 2;}
+
+        switch (State){
+            case 0:
+                document.getElementById('visibilityScore').innerHTML = "GOOD";
+                // document.getElementById("imageid").src="../template/save.png";
+                break;
+            case 1:
+                document.getElementById('visibilityScore').innerHTML = "MEH";
+                // document.getElementById("imageid").src="../template/save.png";
+                break;
+            case 2:
+                document.getElementById('visibilityScore').innerHTML = "BAD";
+                // document.getElementById("imageid").src="../template/save.png";
+                break;
+        }
+};
+   
+// pass this function to each update type function
+   function updateEntrophy(Ent) {
+       document.getElementById('entrophyUsed').innerHTML = Ent;
+   }
