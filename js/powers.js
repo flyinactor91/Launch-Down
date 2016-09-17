@@ -86,7 +86,7 @@ function makePowers(data) {
             Object.defineProperty(data[ptype][name], 'cost', { get: function () { return Math.round((6-this.visibility) * (this.damage*1.5) * this.abilcost); } });
         }
     }
-    return settings
+    return data
 }
 
 var powers = makePowers(powersettings);
