@@ -1,7 +1,5 @@
-//<script type="text/javascript" src="power-settings.json></script>
-
-var settings = {
-    "env": {
+var powersettings = {
+    "Environment": {
         "Thunderstorm": {
             "visibility": 5,
             "damage": 5,
@@ -27,7 +25,7 @@ var settings = {
             "abilcost": 1.25
         }
     },
-    "mech": {
+    "Mechanical": {
         "Fueling Error": {
             "visibility": 2,
             "damage": 5,
@@ -53,7 +51,7 @@ var settings = {
             "abilcost": 1.2
         }
     },
-    "human": {
+    "Human Factors": {
         "Launch Team Distraction": {
             "visibility": 3,
             "damage": 3,
@@ -91,5 +89,5 @@ function makePowers(data) {
     return settings
 }
 
-var powers = makePowers(settings);
+var powers = makePowers(powersettings);
 //console.log(powers.env['Thunderstorm'].cost)
