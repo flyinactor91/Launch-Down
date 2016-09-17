@@ -1,4 +1,4 @@
-var gameclock = 10;
+var gameclock = 90;
 
 function updateTime() {
     var minute = Math.floor(gameclock / 60);
@@ -12,7 +12,10 @@ function updateTime() {
 
     console.log(minute + ':' + second);
     document.getElementById('clock').innerHTML = 'T-' + minute + ':' + second;
-    gameclock -= 1;
+}
+
+function rocketStatus() {
+
 }
 
 function liftoff() {
@@ -22,6 +25,7 @@ function liftoff() {
 function timeHandler() {
     //set clock
     updateTime();
+    gameclock -= 1;
     //If time has run out, stop interval and run liftoff code
     if (0 > gameclock) {
         clearInterval(tick);
