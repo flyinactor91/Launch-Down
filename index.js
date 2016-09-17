@@ -4,13 +4,45 @@ var fit = require('canvas-fit')
   window.addEventListener('resize', fit(canvas), false)
   var ctx = canvas.getContext('2d')
 
-
 var images = require("./art/js/images.js")
+
+// var thunder = new Audio('art/Sounds/Thunder_HD-Mark_DiAngelo-587966950.mp3')
+
+var audioContext = new AudioContext()
+// wait 100ms for sample to download/decode
+var startTime = audioContext.currentTime + 0.2
+
+function playSample(file_name){
+  //'art/Sounds/Thunder_HD-Mark_DiAngelo-587966950.mp3'
+  getSample(file_name, function play (buffer) {
+    var player = audioContext.createBufferSource()
+    player.buffer = buffer
+    player.connect(audioContext.destination)
+    player.start(startTime)
+  })
+}
+
+function getSample(url, cb) {
+  var request = new XMLHttpRequest()
+  request.open('GET', url)
+  request.responseType = 'arraybuffer'
+  request.onload = function () {
+    audioContext.decodeAudioData(request.response, cb)
+  }
+  request.send()
+}
+
+function drawCircle(cx, cy, r){
+  ctx.beginPath()
+  ctx.arc(cx, cy, r, 0, 2 * Math.PI, false)
+  ctx.fillStyle = 'rgba(0,0,0,0.4)'
+  ctx.fill()
+  ctx.stroke()
+}
 
 var UI_ratio = 611/808 //bottom bar
 var buttons = {}
-
-document.addEventListener('click', getRelativeCoords, false);
+  buttons.tips = ['smiley', 'mechanics', 'thunder']
 
 function distance(x1,y1,x2,y2){
   var dx = x2 - x1 + buttons.height/2 //offset (image center is top left)
@@ -18,25 +50,49 @@ function distance(x1,y1,x2,y2){
   return Math.sqrt(dx*dx + dy*dy)
 }
 
+document.addEventListener('mousemove', getRelativeCoords, false)
+document.addEventListener('click', function(e){
+  mouse = event
+  clickButton(getButton())
+}, false)
+
+var mouse = {}
 function getRelativeCoords(event) {
-    console.log( { x: event.offsetX, y: event.offsetY } )
-    var x = event.offsetX
-    var y = event.offsetY
-    for(var i = 0; i < buttons.pos.length; i++){
+    // console.log( { x: event.offsetX, y: event.offsetY } )
+    mouse = event
+}
+
+function checkHover(){
+  var i = getButton()
+  if(i >= 0){
       var bx = buttons.pos[i][0]
       var by = buttons.pos[i][1]
-      console.log([bx, by, distance(x,y, bx, by)])
-      if(distance(x,y, bx, by) < buttons.height/2){ //height is diameter
-        console.log("CLICKED!")
-        switch(i){
-          case 0:
-            var audio = new Audio('art/thunder.mp3')
-            audio.play()
-            break;
-        }
-      }
-
+      drawCircle(bx + buttons.height/2, by + buttons.height/2, buttons.height/2)
+      ctx.font="20px Georgia";
+      ctx.fillText(buttons.tips[i], mouse.offsetX, mouse.offsetY)
+      //tooltip
+  }
+}
+function getButton(){
+  var x = mouse.offsetX
+  var y = mouse.offsetY
+  for(var i = 0; i < buttons.pos.length; i++){
+    var bx = buttons.pos[i][0]
+    var by = buttons.pos[i][1]
+    if(distance(x,y, bx, by) < buttons.height/2){ //height is diameter
+      return i
     }
+  }
+  return -1
+}
+
+function clickButton(i){
+  switch(i){
+    case 2:
+      playSample('art/Sounds/Thunder_HD-Mark_DiAngelo-587966950.mp3')
+      break;
+    default:
+  }
 }
 
 function updateButtons(){
@@ -58,6 +114,9 @@ function render(){
   ctx.drawImage(images.ui, 0, 0, canvas.width, canvas.height)
   updateButtons()
   drawButtons()
+  checkHover()
   window.requestAnimationFrame(render)
 }
 render()
+//npm install
+//budo index.js
