@@ -73,6 +73,10 @@ function setFire(set) {
     document.getElementById('rocket_canvas').style.display = set;
 }
 
+function setExplosion(set) {
+    document.getElementById('explosion_canvas').style.display = set;
+}
+
 function animateLaunch() {
     /*
     animate here
@@ -81,9 +85,8 @@ function animateLaunch() {
 }
 
 function animateExplosion() {
-    /*
-    animate here
-    */
+    setFire('none');
+    setExplosion('block');
     setTimeout(function() {levelEndHandler(1);}, 3000);
 }
 
@@ -207,7 +210,7 @@ function levelEndHandler(result) {
 
 function resetLevel() {
     clearInterval(tick);
-    gameClock = 50;
+    gameClock = 5;
     levelVisibility = 0;
     levelDamage = 0;
     for (ptype in powers) {
@@ -219,6 +222,7 @@ function resetLevel() {
         }
     }
     setFire('none');
+    setExplosion('none');
     updateTimeVisuals();
     updatePowerVisuals();
 };
