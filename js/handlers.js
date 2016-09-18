@@ -2,7 +2,6 @@ var gameClock;
 var gameEntropy;
 var levelVisibility;
 var levelDamage;
-var levelPowers;
 var tick;
 
 //Time-based handler functions
@@ -36,6 +35,12 @@ function updateTimeVisuals() {
 
 function liftoff() {
     console.log('LIFTOFF');
+    if (gameEntropy >= 6) { // 6 is currently the lowest playable cost in the demo
+        alert("Time for another launch");
+        playLevel();
+    } else {
+        alert("Game over! We're too lazy to calculate your score");
+    }
 };
 
 function timeHandler() {
@@ -104,14 +109,15 @@ function updateDamage(damage) {
     damage *= 10;
     if (damage > 100) damage = 100;
     document.getElementById('damagebar').style.width = damage+"%"
-    if(damage>75){
-        document.getElementById('damagebar').style.background = "#FF0000 "}
-    else if(damage>50){
-        document.getElementById('damagebar').style.background = "#FF7000 "}
-    else if(damage>25){
-        document.getElementById('damagebar').style.background = "#FFF700 "}
-    else {
-        document.getElementById('damagebar').style.background = "#5DFF00 "}
+    if (damage > 75) {
+        document.getElementById('damagebar').style.background = "#FF0000 "
+    } else if (damage > 50) {
+        document.getElementById('damagebar').style.background = "#FF7000 "
+    } else if (damage > 25) {
+        document.getElementById('damagebar').style.background = "#FFF700 "
+    } else {
+        document.getElementById('damagebar').style.background = "#5DFF00 "
+    }
 }
 
 // pass this function to each update type function
@@ -143,8 +149,8 @@ function handlePower(power) {
 function powerButtonHandler(ptype, pname) {
     if (0 > gameClock) return;
     console.log(ptype, pname);
-    if (handlePower(levelPowers[ptype][pname])) {
-        levelPowers[ptype][pname].active = true;
+    if (handlePower(powers[ptype][pname])) {
+        powers[ptype][pname].active = true;
     }
     updatePowerVisuals();
 };
@@ -153,10 +159,13 @@ function powerButtonHandler(ptype, pname) {
 
 function resetLevel() {
     gameClock = 90;
-    gameEntropy = 100;
     levelVisibility = 0;
     levelDamage = 0;
-    levelPowers = powers;
+    for (ptype in powers) {
+        for (pname in powers[ptype]) {
+            powers[ptype][pname].active = false;
+        }
+    }
     updateTimeVisuals();
     updatePowerVisuals();
 };
@@ -168,5 +177,6 @@ function playLevel() {
 
 function playgame() {
     alert('Hi Murphy! Are you ready to make things go wrong?')
-    playLevel();
+    gameEntropy = 100;
+    playLevel()
 }
