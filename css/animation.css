@@ -41,21 +41,22 @@
     /*animation-delay: 1000;*/
     animation-play-state: paused;
 }
-#ExcessiveFrost {
+/*#ExcessiveFrost {
     /*width: 100px;*/
     /*height: 100px;*/
     /*opacity: 0.0;*/
     /*background-color: aliceblue;*/
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
-    top: 5px;
-    animation-name: bounce; /* Chrome, Safari, Opera */
-    animation-duration: 5s;  /*Chrome, Safari, Opera */
+    top: 5px;*/
+    /*animation-name: bounce;  Chrome, Safari, Opera */
+    /*animation-duration: 5s;  Chrome, Safari, Opera */
     /*animation-iteration-count: 5;*/
     /*animation-delay: 1000;*/
-    animation-play-state: paused;
-}
+    /*animation-play-state: paused;}*/
+
+
 #AnimalAttack {
     width: 50px;
     height: 50px;
