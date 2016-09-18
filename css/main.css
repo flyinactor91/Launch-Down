@@ -117,6 +117,26 @@ button {
     font-size: 18px;
 }
 
+#launchpad {
+    height: 275px;
+    width: 70px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 200px;
+    left: 45%;
+}
+
+#rocket {
+    height: 321px;
+    width: 45px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 105px;
+    left: 47%;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
