@@ -66,6 +66,7 @@ function updateTimeVisuals() {
     updateTime();
     updateRocketStatus();
     document.getElementById('entropyPoints').style.color = 'gold';
+    if (gameClock == 3) setFire('block');
 }
 
 function setFire(set) {
@@ -76,21 +77,19 @@ function animateLaunch() {
     /*
     animate here
     */
-    document.getElementById('rocket_canvas').style.animationPlayState = "running";
-    // setTimeout(levelEndHandler(0), 3000);
+    setTimeout(function() {levelEndHandler(0);}, 500);
 }
 
 function animateExplosion() {
     /*
     animate here
     */
-    setTimeout(levelEndHandler(1), 3000);
+    setTimeout(function() {levelEndHandler(1);}, 3000);
 }
 
 function liftoff() {
     console.log('LIFTOFF');
     if (launchSuccess()) {
-        setFire('block');
         gameDifficulty += .15;
         //calling setTimeout here will call a-func n-miliseconds from this point
         animateLaunch();
