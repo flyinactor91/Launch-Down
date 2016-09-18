@@ -56,55 +56,16 @@ function timeHandler() {
 
 //Power-based handler functions
 
-
-// image animation function and mapping
-
-var animationMappings = {
-    "Thunderstorm": {"start":["0px", "0px"], "end":["400px", "400px"],},
-    "Malfunctioning Sensors": {"start":["0px", "0px"], "end":["400px", "400px"],},
-    "Quality Assurance Failure": {"start":["0px", "0px"], "end":["400px", "400px"],},
-    "Excessive Frost": {"start":["0px", "0px"], "end":["400px", "400px"],},
-    "Animal Attack": {"start":["0px", "0px"], "end":["400px", "400px"],},
-}
-
-
-
-// function Animation(button) {
-//     document.getElementById(button).style.visibility = 'visible';
-//     var elem = document.getElementById(button);
-//     var begin = animationMappings[button]["start"];
-//     var end = animationMappings[button]["end"];
-//     var id = setInterval(frame, 12);
-//     function frame() {
-//         console.log("ITS WORKING");
-//         if (begin == end) {
-//         clearInterval(id);
-//         } else {
-//         begin++;
-//         elem.style.top = begin + 'px';
-//         elem.style.left = begin + 'px';
-//         }
-//   }
-// }
-
-
-
-
 // checks player visibility on button click
 function updateVisibility(Vis) {
     if (levelVisibility <= 5) {
-        // document.getElementById('visibilityScore').innerHTML = "GOOD";
         document.getElementById("visibilityScore").src = "art/sprites/Green.png";
     } else if (levelVisibility <= 10) {
-        // document.getElementById('visibilityScore').innerHTML = "MEH";
         document.getElementById("visibilityScore").src= "art/sprites/yellow.png";
-    } else { 
-        if (levelVisibility > 10) {
-        // document.getElementById('visibilityScore').innerHTML = "BAD";
+    } else if (levelVisibility > 10) {
         document.getElementById("visibilityScore").src= "art/sprites/Red.png";
     }
-}}
-
+}
 
 function updateDamage(damage) {
     damage *= 10;
@@ -158,9 +119,6 @@ function powerButtonHandler(ptype, pname) {
         powers[ptype][pname].active = true;
         // update animation state
         document.getElementById(powers[ptype][pname].animationName).style.animationPlayState = 'running';
-        // console.log(temp);
-        // console.log(temp);
-        debugger;
     }
     updatePowerVisuals();
 };
