@@ -101,6 +101,7 @@ function updateVisibility(Vis) {
 
 
 function updateDamage(damage) {
+    damage *= 7;
     if (damage > 100) damage = 100;
     document.getElementById('damagebar').style.width = damage+"%"
     if(damage>75){
@@ -129,7 +130,7 @@ function handlePower(power) {
     if (power.active) {
         return false;
     } else if (pcost > gameEntropy) {
-        document.getElementById('entropyPoints').style.backgroundColor = "red";
+        document.getElementById('entropyPoints').style.color = "#C00";
         return false;
     } else {
         gameEntropy -= pcost;
