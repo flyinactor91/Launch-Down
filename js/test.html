@@ -7,11 +7,25 @@
     font-family: clockFont;
     src: url(../fonts/ds-digii.ttf) format("truetype");
 }
+body {
+	background: url("../art/sprites/ui.png");
+	background-size: 1015px 780px;
+	background-repeat: no-repeat;
+}
+.topright {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+}
+.container {
+    position: relative;
+}
 </style>
 </head>
 
 <body onload="playgame()">
-    <div id="clock" style="font-family:clockFont;color:#FBF89E">T-01:30</div>
+    <div id="clock" style="font-family:clockFont;color:#FBF89E" class="topright">T-01:30</div>
     <div>Rocket Status: <span id="rocketstatus"></span></div>
     <button onclick="powerButtonHandler('Environment', 'Thunderstorm')">Environment - Thunderstorm</button>
     <button onclick="powerButtonHandler('Mechanical', 'Malfunctioning Sensors')">Mechanical - Malfunctioning Sensors</button>
@@ -21,7 +35,7 @@
         <div id="damagebar" style="height:10px;width:0%;background:#F00;"></div>
     </div>
     <div id="entropyPoints">70</div>
-
+	
     <script type="text/javascript" src="powers.js"></script>
     <script type="text/javascript" src="rocketstatus.js"></script>
     <script type="text/javascript" src="handlers.js"></script>
