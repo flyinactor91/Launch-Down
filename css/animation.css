@@ -132,3 +132,10 @@
     0% {top: 105px;}
     100% {top: 0px;}
 }
+
+@keyframes ice {
+    0%   {opacity:0.0;}
+    25%  {opacity: 5.0;}
+    75%  {opacity: 5.0;}
+    100% {opacity: 0.0;}
+}
