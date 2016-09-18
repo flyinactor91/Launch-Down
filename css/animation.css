@@ -91,6 +91,9 @@
 }
 
 #rocketlaunch {
+    margin: 0px;
+    padding: 0px;
+    top: 105px;
     animation-name: launch;
     animation-duration: 5s;
     animation-play-state: paused;
