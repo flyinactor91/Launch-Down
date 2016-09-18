@@ -87,7 +87,7 @@
 }
 
 .container {
-    position: relative;
+    position: absolute;
     height: 770px;
     width: 1015px;
 }
