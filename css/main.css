@@ -44,6 +44,10 @@ button {
     background-size: 100%;
     position: absolute;
     bottom: 0;
-    
+}
+
+#status {
+    position: absolute;
+    left: 40%;
     
 }
