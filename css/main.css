@@ -24,9 +24,11 @@
 }
 
 #entropyPoints {
-    font-size: 24pt;
-    margin-top: -160px;
-    margin-left: 60px;
+    font-size: 32pt;
+    margin-top: -169px;
+    margin-left: 75px;
+    font-weight: bolder;
+    color: gold;
 }
 
 .rotate-16 {
