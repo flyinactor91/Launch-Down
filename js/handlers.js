@@ -167,5 +167,6 @@ function playLevel() {
 };
 
 function playgame() {
+    alert('Hi Murphy! Are you ready to make things go wrong?')
     playLevel();
 }
