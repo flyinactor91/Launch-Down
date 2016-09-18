@@ -72,20 +72,34 @@ function setFire(set) {
     document.getElementById('rocket_canvas').style.display = set;
 }
 
+function animateLaunch() {
+    /*
+    animate here
+    */
+    setTimeout(levelEndHandler(0), 3000);
+}
+
+function animateExplosion() {
+    /*
+    animate here
+    */
+    setTimeout(levelEndHandler(1), 3000);
+}
+
 function liftoff() {
     console.log('LIFTOFF');
     if (launchSuccess()) {
         setFire('block');
         gameDifficulty += .15;
         //calling setTimeout here will call a-func n-miliseconds from this point
-        alert("Oh no! The rocket launch successfully")
+        animateLaunch();
     } else {
+
         gameDifficulty += .2;
         gamePoints += 3;
         updateVictory(gamePoints);
-        alert("Congratulations! The launch team has a lot of work to do")
+        animateExplosion();
     }
-    levelEndHandler();
 };
 
 function timeHandler() {
@@ -164,8 +178,7 @@ function powerButtonHandler(ptype, pname) {
             gameDifficulty += .1;
             gamePoints += 1;
             updateVictory(gamePoints);
-            alert("Command has decided to scrub the launch. You'll have to be sneakier than that")
-            levelEndHandler();
+            levelEndHandler(2);
         }
         // update animation state
         document.getElementById(powers[ptype][pname].animationName).style.animationPlayState = 'running';
@@ -175,7 +188,14 @@ function powerButtonHandler(ptype, pname) {
 
 //Primary game loop functions
 
-function levelEndHandler() {
+function levelEndHandler(result) {
+    if (result == 0) { //launch
+        alert("Oh no! The rocket launch successfully");
+    } else if (result == 1) { //explode
+        alert("Congradulations! The launch team has a lot of work to do");
+    } else { //scrub
+        alert("Command has decided to scrub the launch. You'll have to be sneakier than that");
+    }
     if (gameEntropy >= 6) { // 6 is currently the lowest playable cost in the demo
         alert("Time for another launch");
         playLevel();
