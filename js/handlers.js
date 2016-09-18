@@ -123,7 +123,11 @@ function updateDamage(damage) {
 // pass this function to each update type function
 function updateEntropy(Ent) {
     document.getElementById('entropyPoints').innerHTML = Ent;
-};
+}
+
+function updateVictory(Victory) {
+	document.getElementById('victoryPoints').innerHTML = Victory;
+}
 
 function updatePowerVisuals() {
     updateDamage(levelDamage);
@@ -151,6 +155,7 @@ function powerButtonHandler(ptype, pname) {
     console.log(ptype, pname);
     if (handlePower(powers[ptype][pname])) {
         powers[ptype][pname].active = true;
+        // update animation state
     }
     updatePowerVisuals();
 };
@@ -168,6 +173,8 @@ function resetLevel() {
     }
     updateTimeVisuals();
     updatePowerVisuals();
+	gameVictory = 10;
+	updateVictory(gameVictory);
 };
 
 function playLevel() {

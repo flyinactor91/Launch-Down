@@ -31,6 +31,14 @@
     color: gold;
 }
 
+#victoryPoints {
+    margin-top: 281px;
+    margin-left: 39px;    
+	font-size: 20pt;
+	font-weight: bolder;
+    color: blue;
+}
+
 .rotate-16 {
 
 /* Safari */
@@ -41,6 +49,18 @@
 -ms-transform: rotate(-16deg);
 /* Opera */
 -o-transform: rotate(-16deg);
+}
+
+.rotate-13 {
+
+/* Safari */
+-webkit-transform: rotate(13deg);
+/* Firefox */
+-moz-transform: rotate(13deg);
+/* IE */
+-ms-transform: rotate(13deg);
+/* Opera */
+-o-transform: rotate(13deg);
 }
 
 .bar {
@@ -80,13 +100,6 @@ button {
     background-size: 100%;
     position: absolute;
     bottom: 0;
-}
-
-#victoryPoints {
-    position: absolute;
-    top: 132px;
-    left: 43px;
-    transform: rotate(13deg);
 }
 
 #visibilityScore {

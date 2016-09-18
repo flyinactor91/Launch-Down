@@ -1,8 +1,28 @@
 @keyframes thunderstorm {
-    0% {background-image: url()}
-    100% {background-image: url()}
+    /*0% {background-image: url('art/sprites/thunder.png'); left:0px; top:0px;}
+    99% {background-image: url('art/sprites/thunder.png'); left:200px; top:0px;}
+    100% {background-image: none}*/
+
+    0%   {opacity: 0.0;left:80px;}
+    25%  {opacity: 1.0;}
+    75%  {opacity: 1.0;}
+    100% {opacity: 1.0; left:500px;}
+}
+
+.animation {
+    width: 100px;
+    height: 100px;
+    opacity: 0.0;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    top: 220px;
 }
 
 #thunderstorm {
-    
+    animation-name: thunderstorm; /* Chrome, Safari, Opera */
+    animation-duration: 5s;  /*Chrome, Safari, Opera */
+    animation-iteration-count: 5;
+    animation-delay: 1000;
+    animation-play-state: paused;
 }
