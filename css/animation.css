@@ -13,14 +13,14 @@
     animation-play-state: paused;
 }
 #FuelingError {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     opacity: 0.0;
+    background-color: aliceblue;
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    top: 400px;
-    animation-name: zoomleft; /* Chrome, Safari, Opera */
+    animation-name: bounce; /* Chrome, Safari, Opera */
     animation-duration: 5s;  /*Chrome, Safari, Opera */
     /*animation-iteration-count: 5;*/
     /*animation-delay: 1000;*/
@@ -29,7 +29,7 @@
 #ManagementPressure {
     width: 200px;
     height: 200px;
-    opacity: 1.0;
+    opacity: 0.0;
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
@@ -45,6 +45,7 @@
     width: 100px;
     height: 100px;
     opacity: 0.0;
+    background-color: aliceblue;
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
@@ -72,7 +73,7 @@
 #LaunchPadLeak {
     height: 500px;
     width: 175px;
-    opacity: 1.0;
+    opacity: 0.0;
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
