@@ -13,14 +13,14 @@
     animation-play-state: paused;
 }
 #FuelingError {
-    width: 100%;
-    height: 100%;
+    width: 100px;
+    height: 100px;
     opacity: 0.0;
-    background-color: aliceblue;
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    animation-name: bounce; /* Chrome, Safari, Opera */
+    top: 400px;
+    animation-name: zoomleft; /* Chrome, Safari, Opera */
     animation-duration: 5s;  /*Chrome, Safari, Opera */
     /*animation-iteration-count: 5;*/
     /*animation-delay: 1000;*/
@@ -41,20 +41,21 @@
     /*animation-delay: 1000;*/
     animation-play-state: paused;
 }
-/*#ExcessiveFrost {
-    /*width: 100px;*/
-    /*height: 100px;*/
-    /*opacity: 0.0;*/
-    /*background-color: aliceblue;*/
-    /*background-repeat: no-repeat;
+#ExcessiveFrost {
+    width: 100px;
+    height: 100px;
+    opacity: 0.0;
+    background-color: aliceblue;
+    background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
-    top: 5px;*/
-    /*animation-name: bounce;  Chrome, Safari, Opera */
-    /*animation-duration: 5s;  Chrome, Safari, Opera */
-    /*animation-iteration-count: 5;*/
-    /*animation-delay: 1000;*/
-    /*animation-play-state: paused;}*/
+    top: 5px;
+    animation-name: bounce;  
+    animation-duration: 5s;
+    animation-iteration-count: 5;
+    animation-delay: 1000;
+    animation-play-state: paused;
+}
 
 
 #AnimalAttack {
@@ -72,7 +73,7 @@
     animation-play-state: paused;
 }
 #LaunchPadLeak {
-    height: 500px;
+    height: 400px;
     width: 175px;
     opacity: 0.0;
     background-repeat: no-repeat;
