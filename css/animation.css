@@ -42,8 +42,8 @@
     animation-play-state: paused;
 }
 #ExcessiveFrost {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 200px;
     opacity: 0.0;
     border-radius: 20px;
     background-color: aliceblue;
@@ -52,7 +52,7 @@
     position: absolute;
     top: 42%;
     left: 45%;
-    animation-name: bounce;  
+    animation-name: ice;  
     animation-duration: 5s;
     animation-iteration-count: 5;
     animation-delay: 1000;
@@ -131,4 +131,11 @@
 @keyframes launch {
     0% {top: 105px;}
     100% {top: 0px;}
+}
+
+@keyframes ice {
+    0%   {opacity:0.0;}
+    25%  {opacity: 5.0;}
+    75%  {opacity: 5.0;}
+    100% {opacity: 0.0;}
 }
