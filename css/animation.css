@@ -88,6 +88,12 @@
     animation-play-state: paused;
 }
 
+#rocketlaunch {
+    animation-name: launch;
+    animation-duration: 5s;
+    animation-play-state: paused;
+}
+
 
 @keyframes zoomleft {
     /*0% {background-image: url('art/sprites/thunder.png'); left:0px; top:0px;}
@@ -115,4 +121,8 @@
     25%  {opacity: 1.0;}
     75%  {opacity: 1.0;}
     100% {opacity: 1.0;}
+}
+
+@keyframes launch {
+    100% {top: 0px;}
 }
