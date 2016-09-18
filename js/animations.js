@@ -1,28 +1,25 @@
 
 var animationMappings = {
-
+    "Environment": {"start":["0px", "0px"], "end":["400px", "400px"],},
+    "Mechanical": {"start":["0px", "0px"], "end":["400px", "400px"],},
+    "Human": {"start":["0px", "0px"], "end":["400px", "400px"],},
 }
 
 
 
-
-function unhide(img) {
-    document.getElementById(img).style.visibility = 'visible';
-
-}
-
-function myMove(start, end) {
-    document.getElementById(img).style.visibility = 'visible';
-    var elem = document.getElementById("animate");   
-    var pos = start;
-    var id = setInterval(frame, 5);
+function animate(button) {
+    document.getElementById(button).style.visibility = 'visible';
+    var elem = document.getElementById(button);   
+    var begin = animationMappings[button]["start"];
+    var end = animationMappings[button]["end"];
+    var id = setInterval(frame, 12);
     function frame() {
-        if (pos == position) {
+        if (begin == end) {
         clearInterval(id);
         } else {
-        pos++; 
-        elem.style.top = pos + 'px'; 
-        elem.style.left = pos + 'px'; 
+        begin++; 
+        elem.style.top = begin + 'px'; 
+        elem.style.left = begin + 'px'; 
         }
   }
 }
