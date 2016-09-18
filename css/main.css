@@ -5,7 +5,10 @@
 
 #clock {
     font-family:clockFont;
+    font-size: 44pt;
     color:#FBF89E;
+    margin-top: -7px;
+    margin-left: 802px;
 }
 
 .bar {

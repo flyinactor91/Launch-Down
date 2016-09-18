@@ -18,7 +18,7 @@ function updateTime() {
     else if(second<10){second = "0" + second}
 
     console.log(minute + ':' + second);
-    document.getElementById('clock').innerHTML = 'T-' + minute + ':' + second;
+    document.getElementById('clock').innerHTML = 'T-' + minute + '&nbsp;&nbsp;' + second;
 };
 
 function updateRocketStatus() {
@@ -156,7 +156,7 @@ function resetLevel() {
 
 function playLevel() {
     resetLevel();
-    var tick = setInterval(timeHandler, 1000);
+    tick = setInterval(timeHandler, 1000);
 };
 
 function playgame() {
