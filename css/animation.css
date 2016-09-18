@@ -13,56 +13,58 @@
     animation-play-state: paused;
 }
 #FuelingError {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     opacity: 0.0;
+    background-color: aliceblue;
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    top: 400px;
-    animation-name: zoomleft; /* Chrome, Safari, Opera */
+    animation-name: bounce; /* Chrome, Safari, Opera */
     animation-duration: 5s;  /*Chrome, Safari, Opera */
     /*animation-iteration-count: 5;*/
     /*animation-delay: 1000;*/
     animation-play-state: paused;
 }
 #ManagementPressure {
-    width: 100px;
-    height: 100px;
-    opacity: 1.0;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    position: absolute;
-    top: 20%;
-    left: 40%;
-    animation-name: bounce; /* Chrome, Safari, Opera */
-    animation-duration: 5s;  /*Chrome, Safari, Opera */
-    /*animation-iteration-count: 5;*/
-    /*animation-delay: 1000;*/
-    animation-play-state: paused;
-}
-#ExcessiveFrost {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     opacity: 0.0;
     background-repeat: no-repeat;
     background-size: 100%;
-    position: relative;
-    top: 5px;
+    position: absolute;
+    top: 35%;
+    left: 70%;
     animation-name: bounce; /* Chrome, Safari, Opera */
     animation-duration: 5s;  /*Chrome, Safari, Opera */
     /*animation-iteration-count: 5;*/
     /*animation-delay: 1000;*/
     animation-play-state: paused;
 }
+/*#ExcessiveFrost {
+    /*width: 100px;*/
+    /*height: 100px;*/
+    /*opacity: 0.0;*/
+    /*background-color: aliceblue;*/
+    /*background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    top: 5px;*/
+    /*animation-name: bounce;  Chrome, Safari, Opera */
+    /*animation-duration: 5s;  Chrome, Safari, Opera */
+    /*animation-iteration-count: 5;*/
+    /*animation-delay: 1000;*/
+    /*animation-play-state: paused;}*/
+
+
 #AnimalAttack {
     width: 50px;
     height: 50px;
     opacity: 0.0;
     background-repeat: no-repeat;
     background-size: 100%;
-    position: relative;
-    top: 5px;
+    position: absolute;
+    top: 80px;
     animation-name: thunk; /* Chrome, Safari, Opera */
     animation-duration: 5s;  /*Chrome, Safari, Opera */
     /*animation-iteration-count: 5;*/
@@ -70,13 +72,14 @@
     animation-play-state: paused;
 }
 #LaunchPadLeak {
-    width: 100px;
-    height: 100px;
+    height: 500px;
+    width: 175px;
     opacity: 0.0;
     background-repeat: no-repeat;
     background-size: 100%;
-    position: relative;
-    top: 5px;
+    position: absolute;
+    top: 180px;
+    left: 428px;
     animation-name: bounce; /* Chrome, Safari, Opera */
     animation-duration: 5s;  /*Chrome, Safari, Opera */
     /*animation-iteration-count: 5;*/
@@ -93,7 +96,7 @@
     0%   {opacity: 0.0;left:80px;}
     25%  {opacity: 1.0;}
     75%  {opacity: 1.0;}
-    100% {opacity: 1.0;left:800px;}
+    100% {opacity: 1.0;left:500px;}
 }
 
 @keyframes thunk {
@@ -101,10 +104,9 @@
     99% {background-image: url('art/sprites/thunder.png'); left:200px; top:0px;}
     100% {background-image: none}*/
 
-    0%   {opacity: 0.0;left:80px;}
-    10%  {opacity: 1.0}
-    50%  {left:400px}
-    100% {opacity: 1.0;right:60%}
+    0%   {left:100px;top:100px;}
+    75%  {left:450px;top:100px;}
+    100% {opacity: 1.0; left:450px;top:400px}
 }
 
 @keyframes bounce {

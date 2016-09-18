@@ -106,7 +106,7 @@ function makePowers(data) {
         for (var name in data[ptype]) {
             data[ptype][name]['active'] = false;
             Object.defineProperty(data[ptype][name], 'cost', { get: function () { return Math.round((6-this.visibility) * (this.damage*1.5) * this.abilcost); } });
-            console.log(name, data[ptype][name].cost);
+            //console.log(name, data[ptype][name].cost);
         }
     }
     return data

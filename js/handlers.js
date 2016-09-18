@@ -155,10 +155,10 @@ function powerButtonHandler(ptype, pname) {
     if (0 > gameClock) return;
     console.log(ptype, pname);
     var buttonPower = powers[ptype][pname];
-        playSample(buttonPower.sound)
     if (handlePower(buttonPower)) {
         buttonPower.active = true;
         gameEntropy -= buttonPower.cost;
+        playSample(buttonPower.sound)
         if (isScrubbed(buttonPower)) {
             gameDifficulty += .1;
             gamePoints += 1;
@@ -180,10 +180,12 @@ function levelEndHandler() {
         playLevel();
     } else {
         alert("Game over! Your final score is " + gamePoints);
+        throw new Error("Game over exit");
     }
 }
 
 function resetLevel() {
+    clearInterval(tick);
     gameClock = 90;
     levelVisibility = 0;
     levelDamage = 0;
@@ -209,5 +211,5 @@ function playgame() {
 
     gameEntropy = 100;
     gamePoints = 0;
-    gameDifficulty = .5;
+    gameDifficulty = .4;
 }
