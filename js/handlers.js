@@ -193,7 +193,7 @@ function powerButtonHandler(ptype, pname) {
 
 function levelEndHandler(result) {
     if (result == 0) { //launch
-        alert("Oh no! The rocket launch successfully");
+        alert("Oh no! The rocket launched successfully");
     } else if (result == 1) { //explode
         alert("Congratulations! The launch team has a lot of work to do");
     } else { //scrub
