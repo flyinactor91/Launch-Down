@@ -61,8 +61,8 @@
     opacity: 0.0;
     background-repeat: no-repeat;
     background-size: 100%;
-    position: relative;
-    top: 5px;
+    position: absolute;
+    top: 80px;
     animation-name: thunk; /* Chrome, Safari, Opera */
     animation-duration: 5s;  /*Chrome, Safari, Opera */
     /*animation-iteration-count: 5;*/
@@ -101,10 +101,9 @@
     99% {background-image: url('art/sprites/thunder.png'); left:200px; top:0px;}
     100% {background-image: none}*/
 
-    0%   {opacity: 0.0;left:80px;}
-    10%  {opacity: 1.0}
-    50%  {left:400px}
-    100% {opacity: 1.0;right:60%}
+    0%   {left:100px;top:100px;}
+    75%  {left:450px;top:100px;}
+    100% {opacity: 1.0; left:450px;top:400px}
 }
 
 @keyframes bounce {
