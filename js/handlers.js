@@ -77,7 +77,7 @@ function animateLaunch() {
     animate here
     */
     document.getElementById('rocket_canvas').style.animationPlayState = "running";
-    // setTimeout(levelEndHandler(0), 3000);
+    setTimeout(function() {levelEndHandler(0);}, 3000);
 }
 
 function animateExplosion() {
