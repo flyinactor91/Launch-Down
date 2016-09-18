@@ -156,6 +156,10 @@ function powerButtonHandler(ptype, pname) {
     if (handlePower(powers[ptype][pname])) {
         powers[ptype][pname].active = true;
         // update animation state
+        document.getElementById(powers[ptype][pname].animationName).style.animationPlayState = 'running';
+        // console.log(temp);
+        // console.log(temp);
+        debugger;
     }
     updatePowerVisuals();
 };
