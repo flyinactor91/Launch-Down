@@ -94,7 +94,8 @@ function updateVisibility(Vis) {
         // document.getElementById('visibilityScore').innerHTML = "BAD";
         document.getElementById("visibilityScore").src= "art/sprites/Red.png";
     }
-};
+}}
+
 
 function updateDamage(damage) {
     if (damage > 100) damage = 100;
