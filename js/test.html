@@ -2,22 +2,17 @@
 <html lang="en">
 
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+<style>
+@font-face {
+    font-family: clockFont;
+    src: url(../fonts/ds-digii.ttf) format("truetype");
+}
+</style>
 </head>
 
 <body onload="playgame()">
-    <div id="clock" style="font-family: 'Orbitron', sans-serif;">T-01:30</div>
+    <div id="clock" style="font-family:clockFont;color:#FBF89E">T-01:30</div>
     <div>Rocket Status: <span id="rocketstatus"></span></div>
-
-    <button onclick="powerHandler('Environment'), animate('Environment')">Environment</button>
-    <button onclick="powerHandler('Mechanical'), animate('Mechanical')">Mechanical</button>
-    <button onclick="powerHandler('Human Factors'), animate('Human')">Human Factors</button>
-    <div id="visibilityScore">Good</div>
-    <div id="entrophyPoints">70</div>
-    <div id="Environment">HELLO</div>
-    <div id="Mechanical">HELLO</div>
-    <div id="Human">HELLO</div>
-
     <button onclick="powerButtonHandler('Environment', 'Thunderstorm')">Environment - Thunderstorm</button>
     <button onclick="powerButtonHandler('Mechanical', 'Malfunctioning Sensors')">Mechanical - Malfunctioning Sensors</button>
     <button onclick="powerButtonHandler('Human Factors', 'Quality Assurance Failure')">Human Factors - Quality Assurance Failure</button>
@@ -30,7 +25,6 @@
     <script type="text/javascript" src="powers.js"></script>
     <script type="text/javascript" src="rocketstatus.js"></script>
     <script type="text/javascript" src="handlers.js"></script>
-    <script type="text/javascript" src="animations.js"></script>
 </body>
 
 </html>
