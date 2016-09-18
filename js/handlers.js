@@ -119,6 +119,10 @@ function updateEntropy(Ent) {
     document.getElementById('entropyPoints').innerHTML = Ent;
 };
 
+function updateVictory(Victory) {
+	document.getElementById('victoryPoints').innerHTML = Victory;
+}
+
 function updatePowerVisuals() {
     updateDamage(levelDamage);
     updateVisibility(levelVisibility);
@@ -159,6 +163,8 @@ function resetLevel() {
     levelPowers = powers;
     updateTimeVisuals();
     updatePowerVisuals();
+	gameVictory = 10;
+	updateVictory(gameVictory);
 };
 
 function playLevel() {
