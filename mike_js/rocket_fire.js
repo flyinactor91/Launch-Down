@@ -22,7 +22,7 @@ function drawCircle(cx, cy, r, end, t){
   // ctx.stroke()
 }
 
-function updateDrawArr(){
+function updateDrawArr(dx, dy, r){
   var end = arr.length/50
   for(var i = 0; i < arr.length; i++){
     arr[i][4] += 1
@@ -32,7 +32,7 @@ function updateDrawArr(){
       arr[i][0] += arr[i][1]
       arr[i][2] += arr[i][3]
     }
-    drawCircle(arr[i][0], arr[i][2], 10, end, arr[i][4])
+    drawCircle(arr[i][0] + dx, arr[i][2] + dy, r, end, arr[i][4])
   }
 }
 
@@ -42,7 +42,9 @@ function render(){
   ctx.fillStyle = "rgba(0,0,0,0.1)"
   ctx.fillRect(0,0, canvas.width, canvas.height)
   ctx.globalCompositeOperation = 'lighter'
-  updateDrawArr()
+  updateDrawArr(0, 10, 7)
+  updateDrawArr(-16, 0, 2)
+  updateDrawArr(16, 0, 2)
   var ImageData = ctx.getImageData(0,0,canvas.width,canvas.height);
   for(var i = 0;i < canvas.height; i++)
      for(var j = 0; j < canvas.width; j++)

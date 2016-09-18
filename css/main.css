@@ -139,12 +139,12 @@ button {
 
 #rocket_canvas {
     height: 321px;
-    width: 45px;
+    width: 100px;
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    top: 425px;
-    left: 47%;
+    top: 415px;
+    left: 44.2%;
 }
 
 body {
