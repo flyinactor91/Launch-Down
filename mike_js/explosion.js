@@ -1,4 +1,4 @@
-function particle(){
+function Eparticle(){
   //x, vx, y, vy, t
   return [ecanvas.width/2 + (0.5 - Math.random())*2, (0.5 - Math.random())*2,
     // 0, (0.5-Math.random())*6+8, Math.random()*500]
@@ -10,7 +10,7 @@ for(var i = 0; i < arr.length; i++){
   arr[i] = particle()
 }
 
-function drawCircle(cx, cy, r, end, t){
+function EdrawCircle(cx, cy, r, end, t){
   ectx.beginPath()
   ectx.arc(cx, cy, r, 0, 2 * Math.PI, false)
   ectx.fillStyle = 'rgba(255,'
@@ -22,7 +22,7 @@ function drawCircle(cx, cy, r, end, t){
   // ectx.stroke()
 }
 
-function updateDrawArr(dx, dy, r){
+function EupdateDrawArr(dx, dy, r){
   var end = arr.length/50
   for(var i = 0; i < arr.length; i++){
     arr[i][4] += 1
@@ -36,7 +36,7 @@ function updateDrawArr(dx, dy, r){
   }
 }
 
-function render(){
+function Erender(){
   // if(!hidden){}
   ectx.globalCompositeOperation = 'source-over'
   ectx.fillStyle = "rgba(0,0,0,0.1)"
