@@ -2,7 +2,26 @@ var gameClock;
 var gameEntropy;
 var levelVisibility;
 var levelDamage;
+var gameDifficulty;
 var tick;
+
+//Scoring functions
+
+function isScrubbed(power) {
+    var visCutoff = (power.visibility*10 + levelVisibility*5) * gameDifficulty;
+    console.log('(', power.visibility, '* 10 +', levelVisibility, '* 5 ) *', gameDifficulty, '=', visCutoff);
+    var rand = Math.random();
+    console.log(rand, visCutoff/100, rand < visCutoff/100);
+    if (rand < visCutoff/100) {
+        console.log('Scrubbed')
+        return true;
+    } else {
+        console.log('Unnoticed');
+        levelVisibility += power.visibility;
+        levelDamage += power.damage;
+        return false;
+    }
+}
 
 //Time-based handler functions
 
@@ -36,6 +55,7 @@ function updateTimeVisuals() {
 
 function liftoff() {
     console.log('LIFTOFF');
+    gameDifficulty += .3;
     if (gameEntropy >= 6) { // 6 is currently the lowest playable cost in the demo
         alert("Time for another launch");
         playLevel();
@@ -58,11 +78,11 @@ function timeHandler() {
 
 // checks player visibility on button click
 function updateVisibility(Vis) {
-    if (levelVisibility <= 5) {
+    if (levelVisibility <= 3) {
         document.getElementById("visibilityScore").src = "art/sprites/Green.png";
-    } else if (levelVisibility <= 10) {
+    } else if (levelVisibility <= 6) {
         document.getElementById("visibilityScore").src= "art/sprites/yellow.png";
-    } else if (levelVisibility > 10) {
+    } else if (levelVisibility > 6) {
         document.getElementById("visibilityScore").src= "art/sprites/Red.png";
     }
 }
@@ -98,16 +118,12 @@ function updatePowerVisuals() {
 }
 
 function handlePower(power) {
-    var pcost = power.cost
     if (power.active) {
         return false;
-    } else if (pcost > gameEntropy) {
+    } else if (power.cost > gameEntropy) {
         document.getElementById('entropyPoints').style.color = "#C00";
         return false;
     } else {
-        gameEntropy -= pcost;
-        levelVisibility += power.visibility;
-        levelDamage += power.damage;
         return true;
     }
 }
@@ -115,8 +131,15 @@ function handlePower(power) {
 function powerButtonHandler(ptype, pname) {
     if (0 > gameClock) return;
     console.log(ptype, pname);
-    if (handlePower(powers[ptype][pname])) {
-        powers[ptype][pname].active = true;
+    var buttonPower = powers[ptype][pname];
+    if (handlePower(buttonPower)) {
+        buttonPower.active = true;
+        gameEntropy -= buttonPower.cost;
+        if (isScrubbed(buttonPower)) {
+            alert("Command has decided to scrub the launch. You'll have to be sneakier than that")
+            gameDifficulty += .1;
+            playLevel();
+        }
         // update animation state
         document.getElementById(powers[ptype][pname].animationName).style.animationPlayState = 'running';
     }
@@ -148,5 +171,6 @@ function playLevel() {
 function playgame() {
     alert('Hi Murphy! Are you ready to make things go wrong?')
     gameEntropy = 100;
+    gameDifficulty = .5;
     playLevel()
 }
