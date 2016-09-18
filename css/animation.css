@@ -42,10 +42,10 @@
     animation-play-state: paused;
 }
 #ExcessiveFrost {
-    width: 100px;
-    height: 100px;
-    opacity: 0.0;
-    background-color: aliceblue;
+    /*width: 100px;*/
+    /*height: 100px;*/
+    /*opacity: 0.0;*/
+    /*background-color: aliceblue;*/
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
