@@ -10,9 +10,12 @@
 
 .bar {
     height:10px;
-    width:400px;
+    width:650px;
     padding:2px;
-    background:#CCC;
+    background: none;
+    position: absolute;
+    bottom: 185px;
+    left: 19%
 }
 
 .bar-fill {
@@ -45,6 +48,10 @@ button {
 
 #status {
     position: absolute;
-    left: 40%;
-    
+    left: 36%;
+    font-size: 18px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
 }
