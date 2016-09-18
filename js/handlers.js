@@ -3,6 +3,7 @@ var gameEntropy;
 var levelVisibility;
 var levelDamage;
 var gameDifficulty;
+var gamePoints;
 var tick;
 
 //Scoring functions
@@ -11,7 +12,7 @@ function isScrubbed(power) {
     var visCutoff = (power.visibility*10 + levelVisibility*5) * gameDifficulty;
     console.log('(', power.visibility, '* 10 +', levelVisibility, '* 5 ) *', gameDifficulty, '=', visCutoff);
     var rand = Math.random();
-    console.log(rand, visCutoff/100, rand < visCutoff/100);
+    console.log(rand, '<', visCutoff/100, rand < visCutoff/100);
     if (rand < visCutoff/100) {
         console.log('Scrubbed')
         return true;
@@ -20,6 +21,20 @@ function isScrubbed(power) {
         levelVisibility += power.visibility;
         levelDamage += power.damage;
         return false;
+    }
+}
+
+function launchSuccess() {
+    var dmgCutoff = levelDamage / gameDifficulty;
+    console.log(levelDamage, '/', gameDifficulty, '=', dmgCutoff);
+    var rand = Math.random();
+    console.log(rand, '<', dmgCutoff/20, rand < dmgCutoff/20);
+    if (rand < dmgCutoff/20) {
+        console.log('Rocket Explosion');
+        return false;
+    } else {
+        console.log('Launch Success');
+        return true;
     }
 }
 
@@ -35,7 +50,7 @@ function updateTime() {
     if(second<0){second = "00"}
     else if(second<10){second = "0" + second}
 
-    console.log(minute + ':' + second);
+    //console.log(minute + ':' + second);
     document.getElementById('clock-minute').innerHTML = minute;
     document.getElementById('clock-second').innerHTML = second;
 };
@@ -55,13 +70,16 @@ function updateTimeVisuals() {
 
 function liftoff() {
     console.log('LIFTOFF');
-    gameDifficulty += .3;
-    if (gameEntropy >= 6) { // 6 is currently the lowest playable cost in the demo
-        alert("Time for another launch");
-        playLevel();
+    if (launchSuccess()) {
+        gameDifficulty += .15;
+        alert("Oh no! The rocket launch successfully")
     } else {
-        alert("Game over! We're too lazy to calculate your score");
+        gameDifficulty += .2;
+        gamePoints += 3;
+        updateVictory(gamePoints);
+        alert("Congradulations! The launch team has a lot of work to do")
     }
+    levelEndHandler();
 };
 
 function timeHandler() {
@@ -136,9 +154,11 @@ function powerButtonHandler(ptype, pname) {
         buttonPower.active = true;
         gameEntropy -= buttonPower.cost;
         if (isScrubbed(buttonPower)) {
-            alert("Command has decided to scrub the launch. You'll have to be sneakier than that")
             gameDifficulty += .1;
-            playLevel();
+            gamePoints += 1;
+            updateVictory(gamePoints);
+            alert("Command has decided to scrub the launch. You'll have to be sneakier than that")
+            levelEndHandler();
         }
         // update animation state
         document.getElementById(powers[ptype][pname].animationName).style.animationPlayState = 'running';
@@ -147,6 +167,15 @@ function powerButtonHandler(ptype, pname) {
 };
 
 //Primary game loop functions
+
+function levelEndHandler() {
+    if (gameEntropy >= 6) { // 6 is currently the lowest playable cost in the demo
+        alert("Time for another launch");
+        playLevel();
+    } else {
+        alert("Game over! Your final score is " + gamePoints);
+    }
+}
 
 function resetLevel() {
     gameClock = 90;
@@ -159,8 +188,6 @@ function resetLevel() {
     }
     updateTimeVisuals();
     updatePowerVisuals();
-	gameVictory = 10;
-	updateVictory(gameVictory);
 };
 
 function playLevel() {
@@ -174,6 +201,7 @@ function playgame() {
 	document.getElementById('ui').style.visibility = 'visible';
 	document.getElementById('title').style.visibility = 'hidden';
     gameEntropy = 100;
+    gamePoints = 0;
     gameDifficulty = .5;
     playLevel()
 }
