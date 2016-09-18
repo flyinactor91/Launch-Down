@@ -1,6 +1,6 @@
 function Eparticle(){
   //x, vx, y, vy, t
-  var v = 10
+  var v = 15
   return [ecanvas.width/2 + (0.5 - Math.random())*2, (0.5 - Math.random())*v,
     // 0, (0.5-Math.random())*6+8, Math.random()*500]
     ecanvas.height/2, (0.5-Math.random())*v, Math.random()*500]
