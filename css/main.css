@@ -1,0 +1,41 @@
+@font-face {
+    font-family: clockFont;
+    src: url(../font/ds-digii.ttf);
+}
+
+#clock {
+    font-family:clockFont;
+    color:#FBF89E;
+}
+
+.bar {
+    height:10px;
+    width:400px;
+    padding:2px;
+    background:#CCC;
+}
+
+.bar-fill {
+    height:10px;
+    width:0%;
+    background:#F00;
+}
+.topright {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 18px;
+}
+.container {
+    position: relative;
+}
+
+
+button {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background-repeat: no-repeat;
+    background-size: 100%
+
+}
