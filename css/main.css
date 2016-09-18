@@ -23,6 +23,24 @@
     margin-left: 121px;
 }
 
+#entropyPoints {
+    font-size: 24pt;
+    margin-top: -178px;
+    margin-left: 60px;
+}
+
+.rotate-16 {
+
+/* Safari */
+-webkit-transform: rotate(-16deg);
+/* Firefox */
+-moz-transform: rotate(-16deg);
+/* IE */
+-ms-transform: rotate(-16deg);
+/* Opera */
+-o-transform: rotate(-16deg);
+}
+
 .bar {
     height:10px;
     width:650px;
