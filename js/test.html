@@ -4,13 +4,16 @@
 <head>
 </head>
 
-<body>
-    <div id='clock'>T-01:30</div>
+<body onload="playgame()">
+    <div id="clock">T-01:30</div>
+    <div>Rocket Status: <span id="rocketstatus"></span></div>
     <button onclick="powerHandler('Environment')">Environment</button>
     <button onclick="powerHandler('Mechanical')">Mechanical</button>
     <button onclick="powerHandler('Human Factors')">Human Factors</button>
     <div id="visibilityScore">Good</div>
     <div id="entrophyPoints">70</div>
+    <script type="text/javascript" src="powers.js"></script>
+    <script type="text/javascript" src="rocketstatus.js"></script>
     <script type="text/javascript" src="handlers.js"></script>
 </body>
 
