@@ -31,6 +31,7 @@ function updateRocketStatus() {
 function updateTimeVisuals() {
     updateTime();
     updateRocketStatus();
+    document.getElementById('entropyPoints').style.color = 'gold';
 }
 
 function liftoff() {
