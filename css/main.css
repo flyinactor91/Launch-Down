@@ -3,12 +3,24 @@
     src: url(../font/ds-digii.ttf);
 }
 
-#clock {
+.clock {
     font-family:clockFont;
     font-size: 44pt;
     color:#FBF89E;
     margin-top: -7px;
     margin-left: 802px;
+}
+
+#clock-minute {
+    text-align: center;
+    margin-top: -59px;
+    margin-left: -48px;
+}
+
+#clock-second {
+    text-align: center;
+    margin-top: -59px;
+    margin-left: 121px;
 }
 
 .bar {
@@ -23,18 +35,19 @@
     width:0%;
     background:#F00;
 }
+
 .topright {
     position: absolute;
     top: 8px;
     right: 16px;
     font-size: 18px;
 }
+
 .container {
     position: relative;
     height: 770px;
     width: 1015px;
 }
-
 
 button {
     width: 100px;
