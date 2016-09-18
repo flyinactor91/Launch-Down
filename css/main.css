@@ -99,6 +99,7 @@ button {
 
 #status {
     position: absolute;
+    top: 50px;
     left: 36%;
     font-size: 18px;
 }
