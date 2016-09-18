@@ -68,8 +68,13 @@ function updateTimeVisuals() {
     document.getElementById('entropyPoints').style.color = 'gold';
 }
 
+function setFire(set) {
+    document.getElementById('rocket_canvas').style.display = set;
+}
+
 function liftoff() {
     console.log('LIFTOFF');
+    setFire('block');
     if (launchSuccess()) {
         gameDifficulty += .15;
         alert("Oh no! The rocket launch successfully")
@@ -187,6 +192,7 @@ function resetLevel() {
             powers[ptype][pname].active = false;
         }
     }
+    setFire('none');
     updateTimeVisuals();
     updatePowerVisuals();
 };
