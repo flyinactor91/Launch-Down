@@ -54,29 +54,32 @@ function timeHandler() {
 // image animation function and mapping
 
 var animationMappings = {
-    "Environment": {"start":["0px", "0px"], "end":["400px", "400px"],},
-    "Mechanical": {"start":["0px", "0px"], "end":["400px", "400px"],},
-    "Human": {"start":["0px", "0px"], "end":["400px", "400px"],},
+    "Thunderstorm": {"start":["0px", "0px"], "end":["400px", "400px"],},
+    "Malfunctioning Sensors": {"start":["0px", "0px"], "end":["400px", "400px"],},
+    "Quality Assurance Failure": {"start":["0px", "0px"], "end":["400px", "400px"],},
+    "Excessive Frost": {"start":["0px", "0px"], "end":["400px", "400px"],},
+    "Animal Attack": {"start":["0px", "0px"], "end":["400px", "400px"],},
 }
 
 
 
-function animate(button) {
-    document.getElementById(button).style.visibility = 'visible';
-    var elem = document.getElementById(button);
-    var begin = animationMappings[button]["start"];
-    var end = animationMappings[button]["end"];
-    var id = setInterval(frame, 12);
-    function frame() {
-        if (begin == end) {
-        clearInterval(id);
-        } else {
-        begin++;
-        elem.style.top = begin + 'px';
-        elem.style.left = begin + 'px';
-        }
-  }
-}
+// function Animation(button) {
+//     document.getElementById(button).style.visibility = 'visible';
+//     var elem = document.getElementById(button);
+//     var begin = animationMappings[button]["start"];
+//     var end = animationMappings[button]["end"];
+//     var id = setInterval(frame, 12);
+//     function frame() {
+//         console.log("ITS WORKING");
+//         if (begin == end) {
+//         clearInterval(id);
+//         } else {
+//         begin++;
+//         elem.style.top = begin + 'px';
+//         elem.style.left = begin + 'px';
+//         }
+//   }
+// }
 
 
 
