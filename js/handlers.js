@@ -77,6 +77,7 @@ function liftoff() {
     if (launchSuccess()) {
         setFire('block');
         gameDifficulty += .15;
+        //calling setTimeout here will call a-func n-miliseconds from this point
         alert("Oh no! The rocket launch successfully")
     } else {
         gameDifficulty += .2;
@@ -192,7 +193,6 @@ function resetLevel() {
     for (ptype in powers) {
         for (pname in powers[ptype]) {
             powers[ptype][pname].active = false;
-            document.getElementById(powers[ptype][pname].animationName).style.animationPlayState = 'initial';
             document.getElementById(powers[ptype][pname].animationName).style.animationPlayState = 'paused';
         }
     }
