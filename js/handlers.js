@@ -146,7 +146,10 @@ function playLevel() {
 };
 
 function playgame() {
+	document.getElementById('title').style.visibility = 'visible';
     alert('Hi Murphy! Are you ready to make things go wrong?')
+	document.getElementById('ui').style.visibility = 'visible';
+	document.getElementById('title').style.visibility = 'hidden';
     gameEntropy = 100;
     playLevel()
 }
