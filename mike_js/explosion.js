@@ -1,13 +1,14 @@
 function Eparticle(){
   //x, vx, y, vy, t
-  return [ecanvas.width/2 + (0.5 - Math.random())*2, (0.5 - Math.random())*2,
+  var v = 10
+  return [ecanvas.width/2 + (0.5 - Math.random())*2, (0.5 - Math.random())*v,
     // 0, (0.5-Math.random())*6+8, Math.random()*500]
-    ecanvas.height/2, (0.5-Math.random())*10, Math.random()*500]
+    ecanvas.height/2, (0.5-Math.random())*v, Math.random()*500]
 }
 
-var arr = Array(1000)
-for(var i = 0; i < arr.length; i++){
-  arr[i] = particle()
+var Earr = Array(1000)
+for(var i = 0; i < Earr.length; i++){
+  Earr[i] = Eparticle()
 }
 
 function EdrawCircle(cx, cy, r, end, t){
@@ -23,16 +24,16 @@ function EdrawCircle(cx, cy, r, end, t){
 }
 
 function EupdateDrawArr(dx, dy, r){
-  var end = arr.length/50
-  for(var i = 0; i < arr.length; i++){
-    arr[i][4] += 1
-    if(arr[i][4] > arr.length/50){
-      arr[i] = particle()
+  var end = Earr.length/50
+  for(var i = 0; i < Earr.length; i++){
+    Earr[i][4] += 1
+    if(Earr[i][4] > Earr.length/50){
+      Earr[i] = Eparticle()
     } else{
-      arr[i][0] += arr[i][1]
-      arr[i][2] += arr[i][3]
+      Earr[i][0] += Earr[i][1]*Math.random()
+      Earr[i][2] += Earr[i][3]*Math.random()
     }
-    drawCircle(arr[i][0] + dx, arr[i][2] + dy, r, end, arr[i][4])
+    EdrawCircle(Earr[i][0] + dx, Earr[i][2] + dy, r, end, Earr[i][4])
   }
 }
 
@@ -42,7 +43,7 @@ function Erender(){
   ectx.fillStyle = "rgba(0,0,0,0.1)"
   ectx.fillRect(0,0, ecanvas.width, ecanvas.height)
   ectx.globalCompositeOperation = 'lighter'
-  updateDrawArr(0, 0, 4)
+  EupdateDrawArr(0, 0, 10)
   var ImageData = ectx.getImageData(0,0,ecanvas.width,ecanvas.height);
   for(var i = 0;i < ecanvas.height; i++)
      for(var j = 0; j < ecanvas.width; j++)
@@ -50,6 +51,6 @@ function Erender(){
         ImageData.data[((i*(ecanvas.width*4)) + (j*4) + 0)]*
         ImageData.data[((i*(ecanvas.width*4)) + (j*4) + 1)]/(255)
   ectx.putImageData(ImageData,0,0);//put image data back
-  window.requestAnimationFrame(render)
+  window.requestAnimationFrame(Erender)
 }
-render()
+Erender()
