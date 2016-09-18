@@ -70,13 +70,14 @@
     animation-play-state: paused;
 }
 #LaunchPadLeak {
-    width: 100px;
-    height: 100px;
-    opacity: 0.0;
+    height: 500px;
+    width: 175px;
+    opacity: 1.0;
     background-repeat: no-repeat;
     background-size: 100%;
-    position: relative;
-    top: 5px;
+    position: absolute;
+    top: 180px;
+    left: 428px;
     animation-name: bounce; /* Chrome, Safari, Opera */
     animation-duration: 5s;  /*Chrome, Safari, Opera */
     /*animation-iteration-count: 5;*/
