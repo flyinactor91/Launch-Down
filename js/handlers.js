@@ -211,5 +211,5 @@ function playgame() {
 
     gameEntropy = 100;
     gamePoints = 0;
-    gameDifficulty = .5;
+    gameDifficulty = .4;
 }
