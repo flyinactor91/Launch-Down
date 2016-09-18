@@ -13,8 +13,8 @@ function updateTime() {
 
     if(minute<0){minute = "00"}
     else if(minute<10){minute = "0" + minute}
-    
-    if(second<0){second = "00"}    
+
+    if(second<0){second = "00"}
     else if(second<10){second = "0" + second}
 
     console.log(minute + ':' + second);
@@ -48,6 +48,37 @@ function timeHandler() {
 };
 
 //Power-based handler functions
+
+
+// image animation function and mapping
+
+var animationMappings = {
+    "Environment": {"start":["0px", "0px"], "end":["400px", "400px"],},
+    "Mechanical": {"start":["0px", "0px"], "end":["400px", "400px"],},
+    "Human": {"start":["0px", "0px"], "end":["400px", "400px"],},
+}
+
+
+
+function animate(button) {
+    document.getElementById(button).style.visibility = 'visible';
+    var elem = document.getElementById(button);
+    var begin = animationMappings[button]["start"];
+    var end = animationMappings[button]["end"];
+    var id = setInterval(frame, 12);
+    function frame() {
+        if (begin == end) {
+        clearInterval(id);
+        } else {
+        begin++;
+        elem.style.top = begin + 'px';
+        elem.style.left = begin + 'px';
+        }
+  }
+}
+
+
+
 
 // checks player visibility on button click
 function updateVisibility(Vis) {
