@@ -2,23 +2,42 @@
 <html lang="en">
 
 <head>
+<meta charset="UTF-8">
 <style>
 @font-face {
     font-family: clockFont;
-    src: url(../fonts/ds-digii.ttf) format("truetype");
+    src: url(ds-digii.ttf);
+}
+
+#clock {
+    font-family:clockFont;
+    color:#FBF89E;
+}
+
+.bar {
+    height:10px;
+    width:400px;
+    padding:2px;
+    background:#CCC;
+}
+
+.bar-fill {
+    height:10px;
+    width:0%;
+    background:#F00;
 }
 </style>
 </head>
 
 <body onload="playgame()">
-    <div id="clock" style="font-family:clockFont;color:#FBF89E">T-01:30</div>
+    <div id="clock">T-01:30</div>
     <div>Rocket Status: <span id="rocketstatus"></span></div>
     <button onclick="powerButtonHandler('Environment', 'Thunderstorm')">Environment - Thunderstorm</button>
     <button onclick="powerButtonHandler('Mechanical', 'Malfunctioning Sensors')">Mechanical - Malfunctioning Sensors</button>
     <button onclick="powerButtonHandler('Human Factors', 'Quality Assurance Failure')">Human Factors - Quality Assurance Failure</button>
     <div id="visibilityScore">Good</div>
-    <div style="height:10px;width:400px;padding:2px;background:#CCC;">
-        <div id="damagebar" style="height:10px;width:0%;background:#F00;"></div>
+    <div class="bar">
+        <div id="damagebar" class="bar-fill"></div>
     </div>
     <div id="entropyPoints">70</div>
 
