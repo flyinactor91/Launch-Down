@@ -29,7 +29,7 @@
 #ManagementPressure {
     width: 200px;
     height: 200px;
-    opacity: 1.0;
+    opacity: 0.0;
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
@@ -45,16 +45,19 @@
     width: 100px;
     height: 100px;
     opacity: 0.0;
+    background-color: aliceblue;
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
     top: 5px;
-    animation-name: bounce; /* Chrome, Safari, Opera */
-    animation-duration: 5s;  /*Chrome, Safari, Opera */
-    /*animation-iteration-count: 5;*/
-    /*animation-delay: 1000;*/
+    animation-name: bounce;  
+    animation-duration: 5s;
+    animation-iteration-count: 5;
+    animation-delay: 1000;
     animation-play-state: paused;
 }
+
+
 #AnimalAttack {
     width: 50px;
     height: 50px;
@@ -70,9 +73,9 @@
     animation-play-state: paused;
 }
 #LaunchPadLeak {
-    height: 500px;
+    height: 400px;
     width: 175px;
-    opacity: 1.0;
+    opacity: 0.0;
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
@@ -82,6 +85,12 @@
     animation-duration: 5s;  /*Chrome, Safari, Opera */
     /*animation-iteration-count: 5;*/
     /*animation-delay: 1000;*/
+    animation-play-state: paused;
+}
+
+#rocketlaunch {
+    animation-name: launch;
+    animation-duration: 5s;
     animation-play-state: paused;
 }
 
@@ -112,4 +121,8 @@
     25%  {opacity: 1.0;}
     75%  {opacity: 1.0;}
     100% {opacity: 1.0;}
+}
+
+@keyframes launch {
+    100% {top: 0px;}
 }
