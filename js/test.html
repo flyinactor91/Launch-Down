@@ -40,15 +40,25 @@ body {
 .container {
     position: relative;
 }
+
+
+
+button {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background-repeat: no-repeat;
+}
+
 </style>
 </head>
 
 <body onload="playgame()">
     <div id="clock">T-01:30</div>
     <div>Rocket Status: <span id="rocketstatus"></span></div>
-    <button onclick="powerButtonHandler('Environment', 'Thunderstorm')">Environment - Thunderstorm</button>
-    <button onclick="powerButtonHandler('Mechanical', 'Malfunctioning Sensors')">Mechanical - Malfunctioning Sensors</button>
-    <button onclick="powerButtonHandler('Human Factors', 'Quality Assurance Failure')">Human Factors - Quality Assurance Failure</button>
+    <button style="background-image: url('../art/sprites/thunder_button.png');" onclick="powerButtonHandler('Environment', 'Thunderstorm')" >Environment - Thunderstorm</button>
+    <button style="background-image: url('../art/sprites/mechanic_button.png')" onclick="powerButtonHandler('Mechanical', 'Malfunctioning Sensors')">Mechanical - Malfunctioning Sensors</button>
+    <button style="background-image: url('../art/sprites/human_factor_button.png');" onclick="powerButtonHandler('Human Factors', 'Quality Assurance Failure')">Human Factors - Quality Assurance Failure</button>
     <div id="visibilityScore">Good</div>
     <div class="bar">
         <div id="damagebar" class="bar-fill"></div>
