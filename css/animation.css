@@ -27,14 +27,14 @@
     animation-play-state: paused;
 }
 #ManagementPressure {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     opacity: 1.0;
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    top: 20%;
-    left: 40%;
+    top: 35%;
+    left: 70%;
     animation-name: bounce; /* Chrome, Safari, Opera */
     animation-duration: 5s;  /*Chrome, Safari, Opera */
     /*animation-iteration-count: 5;*/
