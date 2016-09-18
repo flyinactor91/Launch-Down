@@ -101,7 +101,7 @@ function updateVisibility(Vis) {
 
 
 function updateDamage(damage) {
-    damage *= 7;
+    damage *= 10;
     if (damage > 100) damage = 100;
     document.getElementById('damagebar').style.width = damage+"%"
     if(damage>75){
@@ -153,7 +153,7 @@ function powerButtonHandler(ptype, pname) {
 
 function resetLevel() {
     gameClock = 90;
-    gameEntropy = 70
+    gameEntropy = 100;
     levelVisibility = 0;
     levelDamage = 0;
     levelPowers = powers;
