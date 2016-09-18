@@ -9,7 +9,7 @@
     100% {opacity: 1.0; left:500px;}
 }
 
-@keyframes thunderstorm {
+@keyframes fuelingerror {
     /*0% {background-image: url('art/sprites/thunder.png'); left:0px; top:0px;}
     99% {background-image: url('art/sprites/thunder.png'); left:200px; top:0px;}
     100% {background-image: none}*/
@@ -20,7 +20,7 @@
     100% {opacity: 1.0; left:500px;}
 }
 
-@keyframes thunderstorm {
+@keyframes managementpressure {
     /*0% {background-image: url('art/sprites/thunder.png'); left:0px; top:0px;}
     99% {background-image: url('art/sprites/thunder.png'); left:200px; top:0px;}
     100% {background-image: none}*/
@@ -31,7 +31,7 @@
     100% {opacity: 1.0; left:500px;}
 }
 
-@keyframes thunderstorm {
+@keyframes excessivefrost {
     /*0% {background-image: url('art/sprites/thunder.png'); left:0px; top:0px;}
     99% {background-image: url('art/sprites/thunder.png'); left:200px; top:0px;}
     100% {background-image: none}*/
@@ -42,62 +42,108 @@
     100% {opacity: 1.0; left:800px;}
 }
 
+@keyframes animalattack {
+    /*0% {background-image: url('art/sprites/thunder.png'); left:0px; top:0px;}
+    99% {background-image: url('art/sprites/thunder.png'); left:200px; top:0px;}
+    100% {background-image: none}*/
 
-.animation {
+    0%   {opacity: 0.0;left:80px;}
+    25%  {opacity: 1.0;}
+    75%  {opacity: 1.0;}
+    100% {opacity: 1.0; left:800px;}
+}
+@keyframes launchpadleak {
+    /*0% {background-image: url('art/sprites/thunder.png'); left:0px; top:0px;}
+    99% {background-image: url('art/sprites/thunder.png'); left:200px; top:0px;}
+    100% {background-image: none}*/
+
+    0%   {opacity: 0.0;left:80px;}
+    25%  {opacity: 1.0;}
+    75%  {opacity: 1.0;}
+    100% {opacity: 1.0; left:800px;}
+}
+
+#Thunderstorm {
     width: 100px;
     height: 100px;
     opacity: 0.0;
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
+    top: 5px;
+    animation-name: thunderstorm; /* Chrome, Safari, Opera */
     animation-duration: 5s;  /*Chrome, Safari, Opera */
-    animation-iteration-count: 5;
+    /*animation-iteration-count: 5;*/
     /*animation-delay: 1000;*/
     animation-play-state: paused;
 }
-
-#Thunderstorm {
-    top: 5px;
-    animation-name: thunderstorm; /* Chrome, Safari, Opera */
-}
-
-#AnimalAttack {
-    top: 5px;
-    animation-name: thunderstorm; /* Chrome, Safari, Opera */
-}
-#CivilianInterference {
-    top: 5px;
-    animation-name: thunderstorm; /* Chrome, Safari, Opera */
-}
 #FuelingError {
+    width: 100px;
+    height: 100px;
+    opacity: 0.0;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
     top: 5px;
-    animation-name: thunderstorm; /* Chrome, Safari, Opera */
-}
-#LaunchPadLeak {
-    top: 5px;
-    animation-name: thunderstorm; /* Chrome, Safari, Opera */
-}
-#RocketValveFailure {
-    top: 5px;
-    animation-name: thunderstorm; /* Chrome, Safari, Opera */
-}
-#MalfunctioningSensors {
-    top: 5px;
-    animation-name: thunderstorm; /* Chrome, Safari, Opera */
-}
-#LaunchTeamDistraction {
-    top: 5px;
-    animation-name: thunderstorm; /* Chrome, Safari, Opera */
-}
-#FlightCrewDistraction {
-    top: 5px;
-    animation-name: thunderstorm; /* Chrome, Safari, Opera */
-}
-#QualityAssuranceFailure {
-    top: 5px;
-    animation-name: thunderstorm; /* Chrome, Safari, Opera */
+    animation-name: fuelingerror; /* Chrome, Safari, Opera */
+    animation-duration: 5s;  /*Chrome, Safari, Opera */
+    /*animation-iteration-count: 5;*/
+    /*animation-delay: 1000;*/
+    animation-play-state: paused;
 }
 #ManagementPressure {
+    width: 100px;
+    height: 100px;
+    opacity: 0.0;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
     top: 5px;
-    animation-name: thunderstorm; /* Chrome, Safari, Opera */
+    animation-name: managementpressure; /* Chrome, Safari, Opera */
+    animation-duration: 5s;  /*Chrome, Safari, Opera */
+    /*animation-iteration-count: 5;*/
+    /*animation-delay: 1000;*/
+    animation-play-state: paused;
+}
+#ExcessiveFrost {
+    width: 100px;
+    height: 100px;
+    opacity: 0.0;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    top: 5px;
+    animation-name: excessivefrost; /* Chrome, Safari, Opera */
+    animation-duration: 5s;  /*Chrome, Safari, Opera */
+    /*animation-iteration-count: 5;*/
+    /*animation-delay: 1000;*/
+    animation-play-state: paused;
+}
+#AnimalAttack {
+    width: 100px;
+    height: 100px;
+    opacity: 0.0;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    top: 5px;
+    animation-name: animalattack; /* Chrome, Safari, Opera */
+    animation-duration: 5s;  /*Chrome, Safari, Opera */
+    /*animation-iteration-count: 5;*/
+    /*animation-delay: 1000;*/
+    animation-play-state: paused;
+}
+#LaunchPadLeak {
+    width: 100px;
+    height: 100px;
+    opacity: 0.0;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    top: 5px;
+    animation-name: launchpadleak; /* Chrome, Safari, Opera */
+    animation-duration: 5s;  /*Chrome, Safari, Opera */
+    /*animation-iteration-count: 5;*/
+    /*animation-delay: 1000;*/
+    animation-play-state: paused;
 }

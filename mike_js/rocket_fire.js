@@ -37,6 +37,7 @@ function updateDrawArr(){
 }
 
 function render(){
+  // if(!hidden){}
   ctx.globalCompositeOperation = 'source-over'
   ctx.fillStyle = "rgba(0,0,0,0.1)"
   ctx.fillRect(0,0, canvas.width, canvas.height)
@@ -52,3 +53,5 @@ function render(){
   window.requestAnimationFrame(render)
 }
 render()
+//    <script type="text/javascript" src="mike_js/canvas_bundle.js"></script>
+//    <script type="text/javascript" src="mike_js/rocket_fire.js"></script>
