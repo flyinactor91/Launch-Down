@@ -49,6 +49,13 @@ button {
     bottom: 0;
 }
 
+#victoryPoints {
+    position: absolute;
+    top: 132px;
+    left: 43px;
+    transform: rotate(13deg);
+}
+
 #status {
     position: absolute;
     left: 36%;
