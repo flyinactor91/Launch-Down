@@ -1,6 +1,6 @@
 var rocketstatussettings = {
     90: "Loading Fuel Tanks",
-    60: "Fuel Tanks Full",
+    60: "Fuel Tanks Loaded",
     50: "Pressurizing Fuel Tanks",
     35: "Fuel Tanks Pressurized",
     30: "Chilling Engines",

@@ -1,14 +1,15 @@
-var gameclock;
+var gameClock;
+var gameEntropy;
 var levelVisibility;
 var levelDamage;
-var powerset;
+var levelPowers;
 var tick;
 
 //Time-based handler functions
 
 function updateTime() {
-    var minute = Math.floor(gameclock / 60);
-    var second = gameclock % 60;
+    var minute = Math.floor(gameClock / 60);
+    var second = gameClock % 60;
 
     if(minute<0){minute = "00"}
     else if(minute<10){minute = "0" + minute}
@@ -20,24 +21,27 @@ function updateTime() {
     document.getElementById('clock').innerHTML = 'T-' + minute + ':' + second;
 };
 
-function rocketStatus() {
-    var rstat = getRocketStatus(gameclock);
+function updateRocketStatus() {
+    var rstat = getRocketStatus(gameClock);
     if (rstat != null) {
         document.getElementById('rocketstatus').innerHTML = rstat;
     }
 };
+
+function updateTimeVisuals() {
+    updateTime();
+    updateRocketStatus();
+}
 
 function liftoff() {
     console.log('LIFTOFF');
 };
 
 function timeHandler() {
-    //set clock
-    updateTime();
-    rocketStatus();
-    gameclock -= 1;
+    updateTimeVisuals();
+    gameClock -= 1;
     //If time has run out, stop interval and run liftoff code
-    if (0 > gameclock) {
+    if (0 > gameClock) {
         clearInterval(tick);
         liftoff();
     }
@@ -46,7 +50,7 @@ function timeHandler() {
 //Power-based handler functions
 
 // checks player visibility on button click
-function changeImage(Vis) {
+function updateVisibility(Vis) {
     if (levelVisibility <= 5) {
         document.getElementById('visibilityScore').innerHTML = "GOOD";
         // document.getElementById("imageid").src="../template/save.png";
@@ -58,24 +62,65 @@ function changeImage(Vis) {
         // document.getElementById("imageid").src="../template/save.png";
     }
 };
-   
+
+function updateDamage(damage) {
+    if (damage > 100) damage = 100;
+    document.getElementById('damagebar').style.width = damage+"%"
+    if(damage>75){
+        document.getElementById('damagebar').style.background = "#FF0000 "}
+    else if(damage>50){
+        document.getElementById('damagebar').style.background = "#FF7000 "}
+    else if(damage>25){
+        document.getElementById('damagebar').style.background = "#FFF700 "}
+    else {
+        document.getElementById('damagebar').style.background = "#5DFF00 "}
+}
+
 // pass this function to each update type function
-function updateEntrophy(Ent) {
-    document.getElementById('entrophyUsed').innerHTML = Ent;
+function updateEntropy(Ent) {
+    document.getElementById('entropyPoints').innerHTML = Ent;
 };
 
-function powerHandler(ptype) {
-    if (0 > gameclock) return;
-    console.log(ptype);
+function updatePowerVisuals() {
+    updateDamage(levelDamage);
+    updateVisibility(levelVisibility);
+    updateEntropy(gameEntropy);
+}
+
+function handlePower(power) {
+    var pcost = power.cost
+    if (power.active) {
+        return false;
+    } else if (pcost > gameEntropy) {
+        document.getElementById('entropyPoints').style.backgroundColor = "red";
+        return false;
+    } else {
+        gameEntropy -= pcost;
+        levelVisibility += power.visibility;
+        levelDamage += power.damage;
+        return true;
+    }
+}
+
+function powerButtonHandler(ptype, pname) {
+    if (0 > gameClock) return;
+    console.log(ptype, pname);
+    if (handlePower(levelPowers[ptype][pname])) {
+        levelPowers[ptype][pname].active = true;
+    }
+    updatePowerVisuals();
 };
 
 //Primary game loop functions
 
 function resetLevel() {
-    gameclock = 90;
+    gameClock = 90;
+    gameEntropy = 70
     levelVisibility = 0;
     levelDamage = 0;
-    powerset = powers;
+    levelPowers = powers;
+    updateTimeVisuals();
+    updatePowerVisuals();
 };
 
 function playLevel() {
