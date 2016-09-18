@@ -193,7 +193,9 @@ function resetLevel() {
     for (ptype in powers) {
         for (pname in powers[ptype]) {
             powers[ptype][pname].active = false;
-            document.getElementById(powers[ptype][pname].animationName).style.animationPlayState = 'paused';
+            try {
+                document.getElementById(powers[ptype][pname].animationName).style.animationPlayState = 'paused';
+            } catch (e){}
         }
     }
     setFire('none');
