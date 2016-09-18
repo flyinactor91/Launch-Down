@@ -2,7 +2,7 @@
 fit = require('canvas-fit')
 canvas = document.getElementById("rocket_canvas")
 // .appendChild(document.createElement('canvas'))
-  window.addEventListener('resize', fit(canvas), false)
+  // window.addEventListener('resize', fit(canvas), false)
 ctx = canvas.getContext('2d')
 
 },{"canvas-fit":2}],2:[function(require,module,exports){

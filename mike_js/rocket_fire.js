@@ -1,6 +1,6 @@
 function particle(){
   //x, vx, y, vy, t
-  return [canvas.width/2 + (0.5 - Math.random())*5, (0.5 - Math.random())*2,
+  return [canvas.width/2 + (0.5 - Math.random())*2, (0.5 - Math.random())*2,
     0, (0.5-Math.random())*6+8, Math.random()*500]
     // canvas.height/4, (0.5-Math.random())*10+15, Math.random()*500]
 }
