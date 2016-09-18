@@ -39,7 +39,7 @@
     0%   {opacity: 0.0;left:80px;}
     25%  {opacity: 1.0;}
     75%  {opacity: 1.0;}
-    100% {opacity: 1.0; left:500px;}
+    100% {opacity: 1.0; left:800px;}
 }
 
 
@@ -50,13 +50,54 @@
     background-repeat: no-repeat;
     background-size: 100%;
     position: relative;
+    animation-duration: 5s;  /*Chrome, Safari, Opera */
+    animation-iteration-count: 5;
+    /*animation-delay: 1000;*/
+    animation-play-state: paused;
 }
 
 #Thunderstorm {
     top: 5px;
     animation-name: thunderstorm; /* Chrome, Safari, Opera */
-    animation-duration: 5s;  /*Chrome, Safari, Opera */
-    animation-iteration-count: 5;
-    /*animation-delay: 1000;*/
-    animation-play-state: paused;
+}
+
+#AnimalAttack {
+    top: 5px;
+    animation-name: thunderstorm; /* Chrome, Safari, Opera */
+}
+#CivilianInterference {
+    top: 5px;
+    animation-name: thunderstorm; /* Chrome, Safari, Opera */
+}
+#FuelingError {
+    top: 5px;
+    animation-name: thunderstorm; /* Chrome, Safari, Opera */
+}
+#LaunchPadLeak {
+    top: 5px;
+    animation-name: thunderstorm; /* Chrome, Safari, Opera */
+}
+#RocketValveFailure {
+    top: 5px;
+    animation-name: thunderstorm; /* Chrome, Safari, Opera */
+}
+#MalfunctioningSensors {
+    top: 5px;
+    animation-name: thunderstorm; /* Chrome, Safari, Opera */
+}
+#LaunchTeamDistraction {
+    top: 5px;
+    animation-name: thunderstorm; /* Chrome, Safari, Opera */
+}
+#FlightCrewDistraction {
+    top: 5px;
+    animation-name: thunderstorm; /* Chrome, Safari, Opera */
+}
+#QualityAssuranceFailure {
+    top: 5px;
+    animation-name: thunderstorm; /* Chrome, Safari, Opera */
+}
+#ManagementPressure {
+    top: 5px;
+    animation-name: thunderstorm; /* Chrome, Safari, Opera */
 }
