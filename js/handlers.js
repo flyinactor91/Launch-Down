@@ -18,7 +18,8 @@ function updateTime() {
     else if(second<10){second = "0" + second}
 
     console.log(minute + ':' + second);
-    document.getElementById('clock').innerHTML = 'T-' + minute + '&nbsp;&nbsp;' + second;
+    document.getElementById('clock-minute').innerHTML = minute;
+    document.getElementById('clock-second').innerHTML = second;
 };
 
 function updateRocketStatus() {
