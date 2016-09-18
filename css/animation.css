@@ -94,7 +94,7 @@
     0%   {opacity: 0.0;left:80px;}
     25%  {opacity: 1.0;}
     75%  {opacity: 1.0;}
-    100% {opacity: 1.0;left:800px;}
+    100% {opacity: 1.0;left:500px;}
 }
 
 @keyframes thunk {
