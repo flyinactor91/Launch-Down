@@ -33,7 +33,7 @@
 
 #victoryPoints {
     margin-top: 281px;
-    margin-left: 39px;    
+    margin-left: 39px;
 	font-size: 20pt;
 	font-weight: bolder;
     color: blue;
@@ -135,6 +135,16 @@ button {
     position: absolute;
     top: 105px;
     left: 47%;
+}
+
+#rocket_canvas {
+    height: 321px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 415px;
+    left: 44.2%;
 }
 
 body {

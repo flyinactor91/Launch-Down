@@ -150,6 +150,7 @@ function powerButtonHandler(ptype, pname) {
     if (0 > gameClock) return;
     console.log(ptype, pname);
     var buttonPower = powers[ptype][pname];
+        playSample(buttonPower.sound)
     if (handlePower(buttonPower)) {
         buttonPower.active = true;
         gameEntropy -= buttonPower.cost;
@@ -191,17 +192,16 @@ function resetLevel() {
 };
 
 function playLevel() {
+	document.getElementById('ui').style.visibility = 'visible';
+	document.getElementById('title').style.visibility = 'hidden';
     resetLevel();
     tick = setInterval(timeHandler, 1000);
 };
 
 function playgame() {
 	document.getElementById('title').style.visibility = 'visible';
-    alert('Hi Murphy! Are you ready to make things go wrong?')
-	document.getElementById('ui').style.visibility = 'visible';
-	document.getElementById('title').style.visibility = 'hidden';
+
     gameEntropy = 100;
     gamePoints = 0;
     gameDifficulty = .5;
-    playLevel()
 }
