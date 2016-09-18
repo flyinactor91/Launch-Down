@@ -149,6 +149,8 @@ function powerButtonHandler(ptype, pname) {
     console.log(ptype, pname);
     if (handlePower(levelPowers[ptype][pname])) {
         levelPowers[ptype][pname].active = true;
+        // update animation state
+        
     }
     updatePowerVisuals();
 };

@@ -9,7 +9,7 @@
     100% {opacity: 1.0; left:500px;}
 }
 
-#thunderstorm {
+.animation {
     width: 100px;
     height: 100px;
     opacity: 0.0;
@@ -17,8 +17,12 @@
     background-size: 100%;
     position: relative;
     top: 220px;
+}
+
+#thunderstorm {
     animation-name: thunderstorm; /* Chrome, Safari, Opera */
     animation-duration: 5s;  /*Chrome, Safari, Opera */
     animation-iteration-count: 5;
     animation-delay: 1000;
+    animation-play-state: paused;
 }
