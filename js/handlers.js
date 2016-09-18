@@ -83,7 +83,7 @@ function liftoff() {
         gameDifficulty += .2;
         gamePoints += 3;
         updateVictory(gamePoints);
-        alert("Congradulations! The launch team has a lot of work to do")
+        alert("Congratulations! The launch team has a lot of work to do")
     }
     levelEndHandler();
 };
