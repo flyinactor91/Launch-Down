@@ -50,8 +50,8 @@
     background-repeat: no-repeat;
     background-size: 100%;
     position: absolute;
-    top: 30%;
-    left: 45%;
+    top: 20%;
+    left: 55%;
     animation-name: ice;  
     animation-duration: 5s;
     animation-play-state: paused;
