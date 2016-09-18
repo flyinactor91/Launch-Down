@@ -84,16 +84,18 @@ function animate(button) {
 // checks player visibility on button click
 function updateVisibility(Vis) {
     if (levelVisibility <= 5) {
-        document.getElementById('visibilityScore').innerHTML = "GOOD";
-        // document.getElementById("imageid").src="../template/save.png";
+        // document.getElementById('visibilityScore').innerHTML = "GOOD";
+        document.getElementById("visibilityScore").src = "art/sprites/Green.png";
     } else if (levelVisibility <= 10) {
-        document.getElementById('visibilityScore').innerHTML = "MEH";
-        // document.getElementById("imageid").src="../template/save.png";
-    } else { //if (levelVisibility > 10) {
-        document.getElementById('visibilityScore').innerHTML = "BAD";
-        // document.getElementById("imageid").src="../template/save.png";
+        // document.getElementById('visibilityScore').innerHTML = "MEH";
+        document.getElementById("visibilityScore").src= "art/sprites/yellow.png";
+    } else { 
+        if (levelVisibility > 10) {
+        // document.getElementById('visibilityScore').innerHTML = "BAD";
+        document.getElementById("visibilityScore").src= "art/sprites/Red.png";
     }
-};
+}}
+
 
 function updateDamage(damage) {
     if (damage > 100) damage = 100;

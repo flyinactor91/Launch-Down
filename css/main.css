@@ -87,6 +87,14 @@ button {
     transform: rotate(13deg);
 }
 
+#visibilityScore {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    right: 12px;
+    top: 150px;
+}
+
 #status {
     position: absolute;
     left: 36%;
