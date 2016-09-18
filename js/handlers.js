@@ -192,7 +192,7 @@ function levelEndHandler(result) {
     if (result == 0) { //launch
         alert("Oh no! The rocket launch successfully");
     } else if (result == 1) { //explode
-        alert("Congradulations! The launch team has a lot of work to do");
+        alert("Congratulations! The launch team has a lot of work to do");
     } else { //scrub
         alert("Command has decided to scrub the launch. You'll have to be sneakier than that");
     }
@@ -207,7 +207,7 @@ function levelEndHandler(result) {
 
 function resetLevel() {
     clearInterval(tick);
-    gameClock = 90;
+    gameClock = 10;
     levelVisibility = 0;
     levelDamage = 0;
     for (ptype in powers) {
