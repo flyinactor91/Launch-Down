@@ -132,6 +132,7 @@ function powerButtonHandler(ptype, pname) {
     if (0 > gameClock) return;
     console.log(ptype, pname);
     var buttonPower = powers[ptype][pname];
+        playSample(buttonPower.sound)
     if (handlePower(buttonPower)) {
         buttonPower.active = true;
         gameEntropy -= buttonPower.cost;
