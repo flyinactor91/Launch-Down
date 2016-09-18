@@ -208,7 +208,7 @@ function levelEndHandler(result) {
 
 function resetLevel() {
     clearInterval(tick);
-    gameClock = 10;
+    gameClock = 50;
     levelVisibility = 0;
     levelDamage = 0;
     for (ptype in powers) {

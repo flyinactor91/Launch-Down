@@ -137,6 +137,16 @@ button {
     left: 47%;
 }
 
+#explosion_canvas {
+    height: 321px;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 105px;
+    left: 35%;
+}
+
 #rocket_canvas {
     height: 321px;
     width: 100px;
