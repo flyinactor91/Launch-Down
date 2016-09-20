@@ -80,7 +80,7 @@ var powersettings = {
             "abiltext": "Less likely to notice environmental issues",
             "abilcost": 1.5,
             "animationName":'LaunchTeamDistraction',
-            "sound":"../art/Sounds/16mm Film Projector-SoundBible.com-1297668862.mp3"
+            "sound":"../art/Sounds/thunder.mp3"
         },
         "Flight Crew Distraction": {
             "visibility": 4,
