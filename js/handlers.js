@@ -176,7 +176,9 @@ function powerButtonHandler(ptype, pname) {
     if (handlePower(buttonPower)) {
         buttonPower.active = true;
         gameEntropy -= buttonPower.cost;
-        playSample(buttonPower.sound)
+        // playSample(buttonPower.sound)
+
+        powers[ptype][pname]["Audio"].play()
         if (isScrubbed(buttonPower)) {
             gameDifficulty += .1;
             gamePoints += 1;
